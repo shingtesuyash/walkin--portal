@@ -1,0 +1,273 @@
+<app-header [imgUrl]="url"></app-header>
+<app-navbar [visible]="true" [backUrl]="'/personalInfo'"></app-navbar>
+<div class="main">
+    <app-taskbar [active1]="true" [active2]="true"></app-taskbar>
+
+    <div class="qualification">
+        <div class="qualification-header">
+           <h6 class="education-title">Educational Qualifications</h6>
+           <div class="vertical-line"></div>
+           <img class="expand" src="../../assets/icons/expand-less.svg" alt=""> 
+        </div>
+        <form [formGroup]="pageTwoForm">
+            <div class="qualification-detail">
+                <div class="first-details">
+                    <div class="left-content">
+                        <div class="half-content">
+                            <div class="half1">
+                                <div class="mb-4">
+                                    <label for="percentage" class="form-label">Aggregate Percentage*</label>
+                                    <input type="text" class="form-control" id="percentage" name="percentage" formControlName="percentage">  
+                                </div>
+                                <div class="mb-4">
+                                    <label for="passYear" class="form-label">Passing Year*</label>
+                                    <select name="passYear" id="passYear" class="form-control" formControlName="passingYear">
+                                        <option disabled selected>Passing Year</option>
+                                        <option *ngFor="let passYear of passYears" [value]="passYear.value">{{ passYear.label }}</option>
+                                    </select>  
+                                </div>
+                            </div> 
+                            <div class="half2"></div> 
+                        </div>
+                        
+                    </div>
+                    <div class="right-content"></div>
+                </div>
+                 <div class="education2">
+                    <div class="left-side">
+                        <div class="mb-4">
+                            <label for="qualification" class="form-label">Qualification*</label>
+                            <select name="qualification" id="qualification" class="form-control" formControlName="selectedQualification">
+                                <option disabled selected>Select Qualification</option>
+                                <option *ngFor="let qualification of qualifications" [value]="qualification.value">{{ qualification.label }}</option>
+                            </select>  
+                        </div>
+                        
+                    </div>
+                    <div class="right-side">
+                        <div class="mb-4">
+                            <label for="stream" class="form-label">Stream*</label>
+                            <select name="stream" id="stream" class="form-control" formControlName="selectedStream">
+                                <option disabled selected>Select Stream</option>
+                                <option *ngFor="let stream of streams" [value]="stream.value">{{ stream.label }}</option>
+                            </select>  
+                        </div>
+                    </div>
+                </div>
+                <div class="education2">
+                    <div class="left-side">
+                        <div class="mb-4">
+                            <label for="college" class="form-label">College*</label>
+                            <select name="college" id="college" class="form-control" formControlName="selectedCollege" #selectedCollege>
+                                <option disabled selected>Select College</option>
+                                <option *ngFor="let college of colleges" [value]="college.value">{{ college.label }}</option>
+                            </select>  
+                        </div>
+                        
+                    </div>
+                    <div class="right-side">
+                        <div class="mb-4">
+                            <label for="otherclg" class="form-label">If others, please enter your college name</label>
+                            <input type="text" class="form-control" id="otherclg" name="otherclg" formControlName="otherclg" [disabled]="isOtherCollegeDisabled()">
+                        </div>
+                    </div>
+                </div>
+                <div class="first-details">
+                    <div class="left-content">
+                        <div class="half-content">
+                            <div class="half1">
+                                <div class="mb-4">
+                                    <label for="clglocation" class="form-label">Where is your College Located?*</label>
+                                    <input type="text" class="form-control" id="clglocation" name="clglocation" formControlName="clglocation">  
+                                </div>
+                            </div> 
+                            <div class="half2"></div> 
+                        </div>
+                        
+                    </div>
+                    <div class="right-content"></div>
+                </div> 
+            </div>
+            
+        </form>   
+    </div>
+    <div class="qualification">
+        <div class="qualification-header">
+           <h6 class="education-title">Educational Qualifications</h6>
+           <div class="vertical-line"></div>
+           <img class="expand" src="../../assets/icons/expand-less.svg" alt=""> 
+        </div>
+        <form [formGroup]="pageTwoForm">
+            <div class="qualification-detail">
+                <label for="experienceType" class="form-label">Applicant Type*</label>
+                <div class="radio-container">
+                    <div class="form-check">
+                        <input type="radio" id="fresher" formControlName="experienceType" value="Fresher" class="form-check-input radio-btn">
+                        <label for="fresher" class="form-check-label">Fresher</label>
+                      </div>
+                      <div class="form-check">
+                        <input type="radio" id="experienced" formControlName="experienceType" value="Experienced" class="form-check-input radio-btn">
+                        <label for="experienced" class="form-check-label">Experienced</label>
+                      </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="qualification">
+        <form [formGroup]="pageTwoForm">
+            <div class="qualification-detail">
+                <div *ngIf="fc.experienceType.value === 'Experienced'" class="first-details">
+                    <div class="left-content">
+                        <div class="half-content">
+                            <div class="half1">
+                                <div class="mb-4">
+                                    <label for="expYears" class="form-label">Years of Experience*</label>
+                                    <input type="text" class="form-control" id="expYears" name="expYears" formControlName="expYears">  
+                                </div>
+                                <div class="mb-4">
+                                    <label for="currentCTC" class="form-label">Current CTC* (In Rupees)</label>
+                                    <input type="text" class="form-control" id="currentCTC" name="currentCTC" formControlName="currentCTC">  
+                                </div>
+                                <div class="mb-4">
+                                    <label for="expectedCTC" class="form-label">Expected CTC* (In Rupees)</label>
+                                    <input type="text" class="form-control" id="expectedCTC" name="expectedCTC" formControlName="expectedCTC">  
+                                </div>
+                                
+                            </div> 
+                            <div class="half2"></div> 
+                        </div>
+                    </div>
+                    <div class="right-content"></div>
+                </div>
+                <div *ngIf="fc.experienceType.value === 'Experienced'" class="education2">
+                    <div class="left-side">
+                        <div class="mb-4">
+                            <label for="preferredRole" class="form-label">Select All The Technologies You Expertise In*</label>
+                            <div class="check" *ngFor="let tech of techs">
+                                <input
+                                  class="check-btn"
+                                  type="checkbox"
+                                  [id]="tech.value"
+                                  [value]="tech.value"
+                                  [formControl]="getExpertControl(tech.value)"
+                                  (change)="onExpertChange(tech.value, $event)"
+                                >
+                                <label class="remember" [for]="tech.value">{{ tech.label }}</label>
+                            </div> 
+                          </div>
+                    </div>
+                </div>
+
+                <div *ngIf="fc.experienceType.value === 'Experienced'" class="education2">
+                    <div class="left-side">
+                        <div class="mb-4">
+                            <label for="otherExpertiseTech" class="form-label">If others, please mention</label>
+                            <input type="text" class="form-control" id="otherExpertiseTech" name="otherExpertiseTech" formControlName="otherExpertiseTech">  
+                        </div>
+                    </div>
+                    <div class="right-side"></div>
+                </div>
+
+                <div class="education2">
+                    <div class="left-side">
+                        <div class="mb-4">
+                            <label for="preferredRole" class="form-label">Select All The Technologies You Are Familiar In</label>
+                            <div class="check" *ngFor="let tech of techs">
+                                <input
+                                  class="check-btn"
+                                  type="checkbox"
+                                  [id]="tech.value"
+                                  [value]="tech.value"
+                                  [formControl]="getFamilarControl(tech.value)"
+                                  (change)="onFamilarChange(tech.value, $event)"
+                                >
+                                <label class="remember" [for]="tech.value">{{ tech.label }}</label>
+                            </div> 
+                          </div>
+                    </div>
+                </div>
+
+                <div class="education2">
+                    <div class="left-side">
+                        <div class="mb-4">
+                            <label for="otherFamilarTech" class="form-label">If others, please mention</label>
+                            <input type="text" class="form-control" id="otherFamilarTech" name="otherFamilarTech" formControlName="otherFamilarTech">  
+                        </div>
+                    </div>
+                    <div class="right-side"></div>
+                </div>
+
+                <div *ngIf="fc.experienceType.value === 'Experienced'" class="education2 mb-3">
+                    <div class="left-side">
+                        <label for="isNoticePeriod" class="form-label">Are you currently on notice period?*</label>
+                        <div class="radio-container">
+                            <div class="form-check">
+                                <input type="radio" id="yes" formControlName="isNoticePeriod" value="Yes" class="form-check-input radio-btn">
+                                <label for="isNoticePeriod" class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="no" formControlName="isNoticePeriod" value="No" class="form-check-input radio-btn">
+                                <label for="isNoticePeriod" class="form-check-label">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-side"></div>
+                </div>
+
+                <div *ngIf="fc.experienceType.value === 'Experienced'" class="education2">
+                    <div class="left-side">
+                          <div class="mb-4">
+                            <label for="selectNoticeDate" class="form-label" >If Yes, when will your notice period end?*</label>
+                            <input type="date" class="form-control" id="datePicker" formControlName="selectNoticeDate" name="selectNoticeDate"> 
+                        </div>
+                    </div>
+                    <div class="right-side">
+                        <div class="mb-4">
+                            <label for="noticeMonth" class="form-label">How long is your notice period?* (Mention in months)</label>
+                            <select name="noticeMonth" id="noticeMonth" class="form-control" formControlName="noticeMonth" >
+                                <option disabled selected>Select Month</option>
+                                <option *ngFor="let month of months" [value]="month.value">{{ month.label }}</option>
+                            </select>  
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education2 mb-3">
+                    <div class="left-side">
+                        <label for="isAppeared" class="form-label">Have You Appeared For Any Test By Zeus in the past 12 months?*</label>
+                        <div class="radio-container">
+                            <div class="form-check">
+                                <input type="radio" id="yes" formControlName="isAppeared" value="Yes" class="form-check-input radio-btn">
+                                <label for="isAppeared" class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="no" formControlName="isAppeared" value="No" class="form-check-input radio-btn">
+                                <label for="isAppeared" class="form-check-label">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-side"></div>
+                </div>
+
+                <div   class="education2">
+                    <div class="left-side">
+                        <div class="mb-4">
+                            <label for="previousAppliedRole" class="form-label">If Yes, which role did you apply for?</label>
+                            <input type="text" class="form-control" id="opreviousAppliedRole" name="previousAppliedRole" formControlName="previousAppliedRole">  
+                        </div>
+                    </div>
+                    <div class="right-side"></div>
+                </div>
+                
+
+            </div>
+        </form>
+    </div>
+    
+
+    <div class="button-container">
+        <button type="button"  [routerLink]="['/personalInfo']" class="btn text-dark shadow"  >Previous</button>
+        <button type="button"  [routerLink]="['/review']"  class="btn text-dark shadow" (click)="nextButton()" [disabled]="pageTwoForm.invalid">Next</button>
+    </div>
+</div>

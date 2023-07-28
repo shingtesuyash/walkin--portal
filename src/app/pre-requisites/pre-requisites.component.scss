@@ -1,0 +1,227 @@
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Bold.ttf");
+    font-family: Quicksand-Bold;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Light.ttf");
+    font-family: Quicksand-Light;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Medium.ttf");
+    font-family: Quicksand-Medium;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Regular.ttf");
+    font-family: Quicksand-Regular;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-SemiBold.ttf");
+    font-family: Quicksand-SemiBold;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.card{
+    background-color: #FFFFFF;
+    padding: 25px;
+    margin: 25px 25px 0px 25px;
+}
+
+.walkin-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.walkin-title{
+    color: #1F7A54;
+    font-family: Quicksand-SemiBold;
+}
+
+.expire-div{
+    display: flex;
+    justify-content: flex-end;
+}
+.expire{
+    color: #D10107;
+    background-color: #FFE4E6;
+    font-family: Quicksand-SemiBold;
+    font-size: small;
+    padding-left: 8px;
+    width: 115px;
+    position: relative;
+    top: 50px;
+    right: 50px;
+    z-index: 1;
+}
+.label{
+    font-family: Quicksand-SemiBold;
+    color: #838383;
+    font-size: smaller;
+    margin-bottom: 5px;
+}
+.date-time{
+    display: flex;
+    height: 20px;
+}
+.input-data{
+    font-family: Quicksand-SemiBold;
+    font-size: 15px;
+}
+.vl{
+    border-left: 1px solid #E0E0E0;
+    height: 15px;
+    margin: 3px 20px 0px 20px;
+}
+.loc-img{
+    float: left;
+    height: 17px;
+    margin-right: 5px;
+}
+.location{
+    min-width: 100px;;
+}
+.custom-hr{
+    background-color: #c2c2c2;
+    height: 2px;
+    border: none;
+}
+.job-roles{
+    display: flex;
+}
+.role-img{
+    float: left;
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+    border-radius: 50%;
+    border: 1px solid #3F3F3F;
+}
+
+.apply-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    background-color: #3FD28B;
+    font-family: Quicksand-SemiBold;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.internship{
+    background-color: #EEDD6B;
+    font-family: Quicksand-Medium;
+    border-radius: 10px;
+    font-size: 12px;
+    width: 260px;
+    padding: 0px 12px;
+    text-align: center;
+}
+
+.qualification-header{
+    min-height: 56px;
+    background-color: #DBEFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left:15px;
+    padding-right: 10px;
+    margin: 0px 25px 0px 25px;
+}
+
+.education-title{
+    font-family: Quicksand-SemiBold;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: large;
+}
+.vertical-line {
+    border-left: 1px solid #A4B3BF;
+    height: 56px;
+    margin-left: auto;
+    margin-right: 5px;
+  }
+.expand{
+    height: 30px;
+    cursor: pointer;
+}
+
+.content {
+    max-height: -10;
+    overflow: hidden;
+    transition: max-height 0.8s ease-out;
+    margin: 0px 25px 0px 25px;
+    background-color: #FFFFFF;
+  }
+
+  .inner-content{
+    margin: 25px;
+  }
+
+  .rounds{
+    margin: 10px 0px;
+  }
+  
+  .slide-down {
+    max-height: 1500px; /* Adjust the value to the maximum height you expect */
+  }
+  
+  .slide-up {
+    max-height: 0;
+  }
+
+  .form-check-label{
+    font-family: Quicksand-SemiBold;
+    margin-left: 5px;
+}
+.radio-btn{
+    width:20px;
+    height:20px;
+    border: 2px solid #0D6EFD;
+}
+
+.resume{
+    display: flex;
+    align-items: center;
+    
+}
+.upload{
+    height: 35px;
+}
+.resume-text{
+    color: #3FD28B;
+    margin-top: 10px;
+    margin-left: 2px;
+    font-family: QuickSand-SemiBold;
+    cursor: pointer;
+}
+
+.check{
+    display:flex;
+    align-items: center;
+}
+    
+.check-btn{
+    width:20px;
+    height:20px;
+    margin-right:7px;
+    accent-color: #197f54;
+    cursor: pointer;
+    
+}
+
+.remember{
+    font-family: Quicksand-SemiBold;
+    margin-top: 2px;
+}
+
+.cardTime{
+    background-color: #FFFFFF;
+    padding: 25px;
+    margin: 25px 25px 25px 25px;
+}
+

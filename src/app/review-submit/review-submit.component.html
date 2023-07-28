@@ -1,0 +1,416 @@
+<div class="main">
+<app-header [imgUrl]="url"></app-header>
+<app-navbar [visible]="false" [backUrl]="'/qualifications'"></app-navbar>
+
+    <app-taskbar [active1]="true" [active2]="true" [active3]="true"></app-taskbar>
+    <div class="heading">
+        <h6 class="heading-text">Personal Information</h6>
+        <img class="heading-img" src="../../assets/icons/edit-removebg-preview.png" alt="">
+        <p class="edit-text">Edit</p>
+    </div>
+
+    <div class="inputs">
+        <div class="form-input form-child">
+            <div class="mb-4">
+                <label for="fname" class="form-label">First Name</label>
+                <h5>{{pageOneData?.fname}}</h5>
+                <!-- <input type="text" class="form-control" id="fname" name="fname" formControlName="fname">
+                <div *ngIf="fc.fname.errors?.required">
+                    <div class="alert alert-danger" *ngIf="fc.fname.touched && fc.fname.invalid">First Name is Required... </div>  
+                </div> -->
+              </div>
+              <div class="mb-4">
+                <label for="lname" class="form-label">Last Name</label>
+                <h5>{{pageOneData?.lname}}</h5>
+                <!-- <input type="text" class="form-control" id="lname" name="lname" formControlName="lname">
+                <div *ngIf="fc.lname.errors?.required">
+                    <div class="alert alert-danger" *ngIf="fc.lname.touched && fc.lname.invalid">Last Name is Required... </div>  
+                </div> -->
+              </div>
+
+              <div class="mb-4">
+                <label for="email" class="form-label">Email</label>
+                <h5>{{pageOneData?.email}}</h5>
+                <!-- <input for="email" class="form-control" type="email" name="email" formControlName="email">
+                <div *ngIf="fc.email.errors?.required">
+                    <div class="alert alert-danger" *ngIf="fc.email.touched && fc.email.invalid">Email is Required... </div>  
+                </div>
+                <div *ngIf="fc.email.errors?.pattern"> 
+                    <div class="alert alert-danger" *ngIf="fc.email.touched && fc.email.invalid">Invalid Email Id... </div> 
+                </div> -->
+              </div>
+
+               <div class="mb-4">
+                <label for="phone" class="form-label">Phone Number</label>
+                
+                    <div><h5>+91 {{pageOneData?.phone}}</h5></div>
+                    <!-- <input type="text" class="form-control" id="phone" name="phone" formControlName="phone"> -->
+                </div>
+                
+                <!-- <div *ngIf="fc.phone.errors?.required">
+                    <div class="alert alert-danger" *ngIf="fc.phone.touched && fc.phone.invalid">Phone Number is Required... </div>  
+                </div>
+                <div *ngIf="fc.phone.errors?.pattern"> 
+                    <div class="alert alert-danger" *ngIf="fc.phone.touched && fc.phone.invalid">Invalid Phone Number... </div> 
+                </div>
+              </div> -->
+
+              <div class="resume mb-4" >
+                <!-- <input #uploadResume type="file" id="resumeInput"  accept=".pdf"  (change)="onResumeSelected($event)" hidden> -->
+                <img class="upload" src="../../assets/icons/upload-black.svg" alt="">
+                <h6 class="resume-text me-3">UPLOAD RESUME</h6>
+                <h6 class="resume-text">{{pageOneData?.resume.name}}</h6>
+                <!-- <h6 class="resume-text" (click)="uploadResume.click()">UPLOAD RESUME</h6> -->
+              </div>
+
+              <div class="mb-4">
+                <label for="portfolio" class="form-label">Enter Portfolio URL (if any)</label>
+                <h5  *ngIf="pageOneData && pageOneData.portfolio==''">-</h5>
+                <h5>{{pageOneData?.portfolio}}</h5>
+                <!-- <input type="text" class="form-control" id="portfolio" name="portfolio" formControlName="portfolio"> -->
+              </div>
+
+              <div class="mb-4">
+                <label for="preferredRole" class="form-label">Preferred Job Roles</label>
+                <div *ngIf="pageOneData">
+                    <div  class="check" *ngFor="let job of pageOneData.jobRoles">
+                        <h5>{{job}}</h5>
+                        <!-- <input
+                          class="check-btn"
+                          type="checkbox"
+                          [id]="job.value"
+                          [value]="job.value"
+                          [formControl]="getFormControl(job.value)"
+                          (change)="onCheckboxChange(job.value, $event)"
+                        >
+                        <label class="remember" [for]="job.value">{{ job.label }}</label> -->
+                    </div>
+                </div>
+                
+              </div>
+
+             <div class="mb-4">
+                <label for="referral" class="form-label">If You Are Registering Via A Referral, Please Mention Full Name Of The Employee Who Referred You</label>
+                <h5  *ngIf="pageOneData && pageOneData.referral==''">-</h5>
+                <h5>{{pageOneData?.referral}}</h5>
+                <!-- <input type="text" class="form-control" id="referral" name="referral" formControlName="referral"> -->
+              </div>
+
+               <div class="check mb-4">
+                <img *ngIf="pageOneData && pageOneData.sendUpdate" src="../../assets/icons/check_box_black.svg" alt="">
+                <!-- <input class="check-btn" type="checkbox" id="rem" formControlName="sendUpdate"> -->
+                <label class="remember"for="rem">Send me job related updates via mail</label>
+            </div>
+              
+
+        </div>
+
+        <div class="form-profile form-child">
+            <!-- <input type="file" accept="image/*" (change)="onFileSelected($event)" #fileInput hidden> -->
+            <img *ngIf="!pageOneData" class="profile-pic" src="../../assets/icons/account_circle1.svg" alt="">
+            <img *ngIf="pageOneData"  [src]="pageOneData?.profilePic" alt="Uploaded Profile" class="profile-image">
+            <!-- <h6 class="upload-text" (click)="fileInput.click()">UPLOAD DISPLAY PICTURE</h6> -->
+            <h6 class="upload-text">UPLOAD DISPLAY PICTURE</h6>
+            <p class="pic-msg">Max. image size: 5MB</p>
+        </div>
+    </div>
+
+    <div class="heading">
+        <h6 class="heading-text">Qualifications</h6>
+        <img class="heading-img" src="../../assets/icons/edit-removebg-preview.png" alt="">
+        <p class="edit-text">Edit</p>
+    </div>
+
+
+
+    <div class="qualification">
+        <div class="qualification-header">
+           <h6 class="education-title">Educational Qualifications</h6>
+           <!-- <div class="vertical-line"></div>
+           <img class="expand" src="../../assets/icons/expand-less.svg" alt="">  -->
+        </div>
+        <!-- <form [formGroup]="pageTwoForm"> -->
+            <div class="qualification-detail">
+                <div class="first-details">
+                    <div class="left-content">
+                        <div class="half-content">
+                            <div class="half1">
+                                <div class="mb-4">
+                                    <label for="percentage" class="form-label">Aggregate Percentage</label>
+                                    <h5>{{pageTwoData?.percentage}}</h5>
+                                    <!-- <input type="text" class="form-control" id="percentage" name="percentage" formControlName="percentage">   -->
+                                </div>
+                                <div class="mb-4">
+                                    <label for="passYear" class="form-label">Passing Year</label>
+                                    <h5>{{pageTwoData?.passingYear}}</h5>
+                                    <!-- <select name="passYear" id="passYear" class="form-control" formControlName="passingYear">
+                                        <option disabled selected>Passing Year</option>
+                                        <option *ngFor="let passYear of passYears" [value]="passYear.value">{{ passYear.label }}</option>
+                                    </select>   -->
+                                </div>
+                            </div> 
+                            <div class="half2"></div> 
+                        </div>
+                        
+                    </div>
+                    <div class="right-content"></div>
+                </div>
+                 <div class="education2">
+                    <div class="left-side">
+                        <div class="mb-4">
+                            <label for="qualification" class="form-label">Qualification</label>
+                            <h5>{{pageTwoData?.selectedQualification}}</h5>
+                            <!-- <select name="qualification" id="qualification" class="form-control" formControlName="selectedQualification">
+                                <option disabled selected>Select Qualification</option>
+                                <option *ngFor="let qualification of qualifications" [value]="qualification.value">{{ qualification.label }}</option>
+                            </select>   -->
+                        </div>
+                        
+                    </div>
+                    <div class="right-side">
+                        <div class="mb-4">
+                            <label for="stream" class="form-label">Stream</label>
+                            <h5>{{pageTwoData?.selectedStream}}</h5>
+                            <!-- <select name="stream" id="stream" class="form-control" formControlName="selectedStream">
+                                <option disabled selected>Select Stream</option>
+                                <option *ngFor="let stream of streams" [value]="stream.value">{{ stream.label }}</option>
+                            </select>   -->
+                        </div>
+                    </div>
+                </div>
+                <div class="education2">
+                    <div class="left-side">
+                        <div class="mb-4">
+                            <label for="college" class="form-label">College</label>
+                            <h5>{{pageTwoData?.selectedCollege}}</h5>
+                            <!-- <select name="college" id="college" class="form-control" formControlName="selectedCollege" #selectedCollege>
+                                <option disabled selected>Select College</option>
+                                <option *ngFor="let college of colleges" [value]="college.value">{{ college.label }}</option>
+                            </select>   -->
+                        </div>
+                        
+                    </div>
+                    <div class="right-side">
+                        <div class="mb-4">
+                            <label for="otherclg" class="form-label">If others, please enter your college name</label>
+                            <h5  *ngIf="pageTwoData && pageTwoData.selectedCollege!='Other'">-</h5>
+                            <h5>{{pageTwoData?.otherclg}}</h5>
+                            <!-- <input type="text" class="form-control" id="otherclg" name="otherclg" formControlName="otherclg" [disabled]="isOtherCollegeDisabled()"> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="first-details">
+                    <div class="left-content">
+                        <div class="half-content">
+                            <div class="half1">
+                                <div class="mb-4">
+                                    <label for="clglocation" class="form-label">Where is your College Located?</label>
+                                    <h5>{{pageTwoData?.clglocation}}</h5>
+                                    <!-- <input type="text" class="form-control" id="clglocation" name="clglocation" formControlName="clglocation">   -->
+                                </div>
+                            </div> 
+                            <div class="half2"></div> 
+                        </div>
+                        
+                    </div>
+                    <div class="right-content"></div>
+                </div> 
+            </div>
+            
+        <!-- </form>     -->
+    </div>
+
+
+    <div class="qualification">
+        <div class="qualification-header">
+           <h6 class="education-title">Professional Qualifications</h6>
+           <!-- <div class="vertical-line"></div>
+           <img class="expand" src="../../assets/icons/expand-less.svg" alt="">  -->
+        </div>
+        <!-- <form [formGroup]="pageTwoForm"> -->
+            <div class="qualification-detail">
+                <label for="experienceType" class="form-label">Applicant Type</label>
+                <h5>{{pageTwoData?.experienceType}}</h5>
+                <!-- <div class="radio-container">
+                    <div class="form-check">
+                        <input type="radio" id="fresher" formControlName="experienceType" value="Fresher" class="form-check-input radio-btn">
+                        <label for="fresher" class="form-check-label">Fresher</label>
+                      </div>
+                      <div class="form-check">
+                        <input type="radio" id="experienced" formControlName="experienceType" value="Experienced" class="form-check-input radio-btn">
+                        <label for="experienced" class="form-check-label">Experienced</label>
+                      </div>
+                </div> -->
+            </div>
+        <!-- </form> -->
+    </div>
+
+
+    <div class="qualification">
+        <!-- <form [formGroup]="pageTwoForm"> -->
+            <div class="qualification-detail">
+                <div *ngIf="pageTwoData?.experienceType === 'Experienced'" class="first-details">
+                    <div class="left-content">
+                        <div class="half-content">
+                            <div class="half1">
+                                <div class="mb-4">
+                                    <label for="expYears" class="form-label">Years of Experience</label>
+                                    <h5>{{pageTwoData?.expYears}}</h5>
+                                    <!-- <input type="text" class="form-control" id="expYears" name="expYears" formControlName="expYears">   -->
+                                </div>
+                                <div class="mb-4">
+                                    <label for="currentCTC" class="form-label">Current CTC (In Rupees)</label>
+                                    <h5>{{pageTwoData?.currentCTC}}</h5>
+                                    <!-- <input type="text" class="form-control" id="currentCTC" name="currentCTC" formControlName="currentCTC">   -->
+                                </div>
+                                <div class="mb-4">
+                                    <label for="expectedCTC" class="form-label">Expected CTC (In Rupees)</label>
+                                    <h5>{{pageTwoData?.expectedCTC}}</h5>
+                                    <!-- <input type="text" class="form-control" id="expectedCTC" name="expectedCTC" formControlName="expectedCTC">   -->
+                                </div>
+                                
+                            </div> 
+                            <div class="half2"></div> 
+                        </div>
+                    </div>
+                    <div class="right-content"></div>
+                </div>
+                <div *ngIf="pageTwoData?.experienceType === 'Experienced'" class="education2">
+                    <div class="left-side">
+                        <div class="mb-4">
+                            <label for="preferredRole" class="form-label">Select All The Technologies You Expertise In</label>
+                            
+                            <div class="check" *ngFor="let tech of pageTwoData?.expertiseTech">
+                                <h5>{{tech}}</h5>
+                                <!-- <input
+                                  class="check-btn"
+                                  type="checkbox"
+                                  [id]="tech.value"
+                                  [value]="tech.value"
+                                  [formControl]="getExpertControl(tech.value)"
+                                  (change)="onExpertChange(tech.value, $event)"
+                                >
+                                <label class="remember" [for]="tech.value">{{ tech.label }}</label> -->
+                            </div> 
+                          </div>
+                    </div>
+                </div>
+
+                <div *ngIf="pageTwoData?.experienceType === 'Experienced'" class="education2">
+                    <div class="left-side">
+                        <div class="mb-4">
+                            <label for="otherExpertiseTech" class="form-label">If others, please mention</label>
+                            <h5>{{pageTwoData?.otherExpertiseTech}}</h5>
+                            <!-- <input type="text" class="form-control" id="otherExpertiseTech" name="otherExpertiseTech" formControlName="otherExpertiseTech">   -->
+                        </div>
+                    </div>
+                    <div class="right-side"></div>
+                </div>
+
+                <div class="education2">
+                    <div class="left-side">
+                        <div class="mb-4">
+                            <label for="preferredRole" class="form-label">Select All The Technologies You Are Familiar In</label>
+                            <h5  *ngIf="pageTwoData && pageTwoData.familarTech.length===0">-</h5>
+                            <div class="check" *ngFor="let tech of pageTwoData?.familarTech">
+                                <h5>{{tech}}</h5>
+                                <!-- <input
+                                  class="check-btn"
+                                  type="checkbox"
+                                  [id]="tech.value"
+                                  [value]="tech.value"
+                                  [formControl]="getFamilarControl(tech.value)"
+                                  (change)="onFamilarChange(tech.value, $event)"
+                                >
+                                <label class="remember" [for]="tech.value">{{ tech.label }}</label> -->
+                            </div> 
+                          </div>
+                    </div>
+                </div>
+
+                <div class="education2">
+                    <div class="left-side">
+                        <div class="mb-4">
+                            <label for="otherFamilarTech" class="form-label">If others, please mention</label>
+                            <h5  *ngIf="pageTwoData && pageTwoData.otherFamilarTech==''">-</h5>
+                            <h5>{{pageTwoData?.otherFamilarTech}}</h5>
+                            <!-- <input type="text" class="form-control" id="otherFamilarTech" name="otherFamilarTech" formControlName="otherFamilarTech">   -->
+                        </div>
+                    </div>
+                    <div class="right-side"></div>
+                </div>
+
+                <div *ngIf="pageTwoData?.experienceType === 'Experienced'" class="education2 mb-3">
+                    <div class="left-side">
+                        <label for="isNoticePeriod" class="form-label">Are you currently on notice period?</label>
+                        <h5>{{pageTwoData?.isNoticePeriod}}</h5>
+                        <!-- <div class="radio-container">
+                            <div class="form-check">
+                                <input type="radio" id="yes" formControlName="isNoticePeriod" value="Yes" class="form-check-input radio-btn">
+                                <label for="isNoticePeriod" class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="no" formControlName="isNoticePeriod" value="No" class="form-check-input radio-btn">
+                                <label for="isNoticePeriod" class="form-check-label">No</label>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="right-side"></div>
+                </div>
+
+                 <div *ngIf="pageTwoData?.experienceType === 'Experienced'" class="education2">
+                    <div class="left-side">
+                          <div class="mb-4">
+                            <label for="selectNoticeDate" class="form-label" >If Yes, when will your notice period end?</label>
+                            <h5>{{pageTwoData?.selectNoticeDate}}</h5>
+                            <!-- <input type="date" class="form-control" id="datePicker" formControlName="selectNoticeDate" name="selectNoticeDate">  -->
+                        </div>
+                    </div>
+                    <div class="right-side">
+                        <div class="mb-4">
+                            <label for="noticeMonth" class="form-label">How long is your notice period? (Mention in months)</label>
+                            <h5>{{pageTwoData?.noticeMonth}}</h5>
+                            <!-- <select name="noticeMonth" id="noticeMonth" class="form-control" formControlName="noticeMonth">
+                                <option disabled selected>Select Month</option>
+                                <option *ngFor="let month of months" [value]="month.value">{{ month.label }}</option>
+                            </select>   -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education2 mb-3">
+                    <div class="left-side">
+                        <label for="isAppeared" class="form-label">Have You Appeared For Any Test By Zeus in the past 12 months?</label>
+                        <h5>{{pageTwoData?.isAppeared}}</h5>
+                        <!-- <div class="radio-container">
+                            <div class="form-check">
+                                <input type="radio" id="yes" formControlName="isAppeared" value="Yes" class="form-check-input radio-btn">
+                                <label for="isAppeared" class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="no" formControlName="isAppeared" value="No" class="form-check-input radio-btn">
+                                <label for="isAppeared" class="form-check-label">No</label>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="right-side"></div>
+                </div>
+
+                <div   class="education2">
+                    <div class="left-side">
+                        <div class="mb-4">
+                            <label for="previousAppliedRole" class="form-label">If Yes, which role did you apply for?</label>
+                            <h5  *ngIf="pageTwoData && pageTwoData.isAppeared=='No'">-</h5>
+                            <h5>{{pageTwoData?.previousAppliedRole}}</h5>
+                            <!-- <input type="text" class="form-control" id="opreviousAppliedRole" name="previousAppliedRole" formControlName="previousAppliedRole">   -->
+                        </div>
+                    </div>
+                    <div class="right-side"></div>
+                </div>
+                
+
+            </div>
+        <!-- </form> -->
+    </div>
+
+</div>

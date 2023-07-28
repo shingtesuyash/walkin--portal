@@ -1,0 +1,31 @@
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Bold.ttf");
+    font-family: Quicksand-Bold;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Light.ttf");
+    font-family: Quicksand-Light;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Medium.ttf");
+    font-family: Quicksand-Medium;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Regular.ttf");
+    font-family: Quicksand-Regular;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-SemiBold.ttf");
+    font-family: Quicksand-SemiBold;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+.input-data{
+    font-family: Quicksand-SemiBold;
+    font-size: 15px;
+}
+

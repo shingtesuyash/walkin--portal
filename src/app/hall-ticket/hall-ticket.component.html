@@ -1,0 +1,37 @@
+
+<div class="main">
+   <app-header [imgUrl]="url"></app-header>
+    
+        <div class="outer-card">
+            <img class="green-tick" src="../../assets/icons/green-check.png" alt="">
+           <div class="card">
+                <h5 class="ticket-title">Congratulations ! You have successfully applied for the walk-in opportunity</h5>
+                <hr class="custom-hr">
+                <div class="mb-4">
+                    <p class="label">Date & Time of Walk-In :</p>
+                    <p class="input-data">{{userSelectedWalkin?.startDate}}</p>
+                    <p class="input-data">{{userPreferredData?.selectedTime}}</p>   
+                </div> 
+                <hr class="custom-hr">
+                 <div class="mb-4">
+                    <p class="label">Venue of Walk-In :</p>
+                    <p class="input-data">Zeus Systems Pvt. Ltd.</p>
+                    <p class="input-data">1402, 14th Floor, Tower B, Peninsula Business Park. Ganpatrao Kadam Marg</p>
+                    <p class="input-data">Lower Parel (W)</p>
+                    <p class="input-data">Mumbai - 400 013</p>
+                    <p class="input-data"> Phone: +91-22-66600000</p>
+                    
+                </div>
+                <hr class="custom-hr">
+                <div class="mb-4">
+                    <p class="label">THINGS TO REMEMBER :</p>
+                    <p class="input-data">- Please report 30 MINUTES prior to your reporting time.</p>
+                    <p class="input-data">- Download your Hall Ticket from below and carry it with you during your Walk-In.</p>
+                </div>
+                <hr class="custom-hr">
+                <div class="button-container">
+                    <button type="button"  class="btn text-dark shadow">DOWNLOAD HALL TICKET</button>
+                </div>   
+            </div>
+        </div>    
+</div>

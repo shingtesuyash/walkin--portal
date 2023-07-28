@@ -1,0 +1,72 @@
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Bold.ttf");
+    font-family: Quicksand-Bold;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Light.ttf");
+    font-family: Quicksand-Light;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Medium.ttf");
+    font-family: Quicksand-Medium;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Regular.ttf");
+    font-family: Quicksand-Regular;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-SemiBold.ttf");
+    font-family: Quicksand-SemiBold;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.starter{
+    background: #3C4E62;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 20px 4px 20px;
+}
+
+.back{
+    width: 30px;
+    cursor: pointer;
+}
+
+
+.head{
+    font-family: Quicksand-SemiBold; 
+}
+
+
+.button{
+    display: flex;
+    gap: 10px;
+}
+.btn{
+    background-color: #3FD28B;
+    font-family: Quicksand-SemiBold;
+    width: 100px;
+    border-radius: 4px;
+    text-align: center;
+}
+@media screen and (max-width: 500px){
+    .btn{
+        width: 60px;
+        font-size: small;
+    }
+    .head{
+        font-size: small;
+    }
+}
+@media screen and (min-width: 700px){
+    .head-div{
+        position: relative;
+        right: -5%;
+    }
+}
+
+

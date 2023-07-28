@@ -1,0 +1,84 @@
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Bold.ttf");
+    font-family: Quicksand-Bold;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Light.ttf");
+    font-family: Quicksand-Light;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Medium.ttf");
+    font-family: Quicksand-Medium;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Regular.ttf");
+    font-family: Quicksand-Regular;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-SemiBold.ttf");
+    font-family: Quicksand-SemiBold;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.taskbar{
+    min-height: 56px;
+    margin: 24px;
+    background-color: #FFFFFF;
+    // display: flex;
+    padding: 0px 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task1{
+    display: flex;
+    align-items: center;
+}
+
+.round1{
+    background-color: #757575;
+    color: #FFFFFF;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    padding-left: 10px;
+    padding-bottom: 4px;
+    font-size: 18px;
+    font-weight:500;
+}
+
+.round1.active {
+    background-color: #3FD28B; /* Active color */
+    color: #333333;
+  }
+
+.round-text{
+    font-family: Quicksand-SemiBold;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: large;
+}
+
+.line {
+    flex: 1;
+    height: 3px;
+    margin: 0px 12px;
+    background-color: #EFEFEF;
+  }
+
+  @media screen and (min-width: 750px){
+    .taskbar{
+        display: flex;
+    }
+}
+  
+  
+  
+  
+  
+  
+  
+  

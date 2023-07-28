@@ -1,0 +1,147 @@
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Bold.ttf");
+    font-family: Quicksand-Bold;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Light.ttf");
+    font-family: Quicksand-Light;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Medium.ttf");
+    font-family: Quicksand-Medium;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Regular.ttf");
+    font-family: Quicksand-Regular;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-SemiBold.ttf");
+    font-family: Quicksand-SemiBold;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.main{
+    background-color: #EEEEEE;
+    min-height: calc( 100vh - 101px );
+    padding-top: 4px;
+}
+
+.form1{
+    min-height: calc( 100vh - 210px );
+    margin: 0px 24px;
+}
+
+.inputs{
+    background-color: #FFFFFF;
+    min-height: calc( 100vh - 200px );
+    display: flex;
+    padding: 24px;
+}
+
+.button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.btn{
+    background-color: #3FD28B;
+    font-family: Quicksand-SemiBold;
+    width: 100px;
+    border-radius: 4px;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.form-child{
+    flex: 1;
+}
+
+.form-input{
+    min-height: 500px;
+}
+.form-profile{
+    min-height: 500px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+}
+
+.profile-pic{
+    height: 150px;
+    margin-right: 20px;
+}
+.profile-image {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.upload-text{
+    color: #3FD28B;
+    cursor: pointer;
+    font-family: Quicksand-SemiBold;
+    margin-top: 20px;
+}
+
+.pic-msg{
+    color: #B6B6B6;
+    font-family: Quicksand-SemiBold;
+    font-size:small;
+    margin-right: 25px;
+}
+
+.form-control{
+    border: none;
+    border-bottom: 2px solid #CECECE;
+}
+.form-label{
+    color: #747474;
+    font-family: Quicksand-SemiBold;
+}
+
+.code{
+    border: none;
+    border-bottom: 2px solid #CECECE;
+}
+
+.resume{
+    display: flex;
+    align-items: center;
+    
+}
+.upload{
+    height: 35px;
+}
+.resume-text{
+    color: #3FD28B;
+    margin-top: 10px;
+    margin-left: 2px;
+    font-family: QuickSand-SemiBold;
+    cursor: pointer;
+}
+
+.check{
+    display:flex;
+    align-items: center;
+}
+    
+.check-btn{
+    width:20px;
+    height:20px;
+    margin-right:7px;
+    accent-color: #197f54;
+    cursor: pointer;
+    
+}
+
+.remember{
+    font-family: Quicksand-SemiBold;
+    margin-top: 2px;
+}

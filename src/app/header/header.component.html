@@ -1,0 +1,7 @@
+<div class="background--image">
+    <header class="header">
+        <img class="head-logo" [src]="imgUrl" alt="">
+        <!-- <img *ngIf="!profileVisible" class="profile-img" src="../../assets/icons/account_circle.svg" alt=""> -->
+        <img *ngIf="profileVisible" class="profile-img" [src]="storedData?.profilePic" alt="">
+    </header>
+</div>

@@ -1,0 +1,12 @@
+<div class="starter">
+    <div class="back-div">
+        <a  [routerLink]="backUrl"><img class="back" src="../../assets/icons/back.svg" alt=""></a>
+    </div>
+    <div class="head-div">
+        <h5 class="text-light head">Create An Account</h5>
+    </div>
+    <div class="button">
+        <button type="button" [routerLink]="['/']" class="btn text-dark">Cancel</button>
+        <button type="button" [routerLink]="['/allWalkins']" class="btn text-dark" [disabled]="visible" (click)="createAccount()">Create</button>
+    </div>
+</div>

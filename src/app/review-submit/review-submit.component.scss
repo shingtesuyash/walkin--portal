@@ -1,0 +1,285 @@
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Bold.ttf");
+    font-family: Quicksand-Bold;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Light.ttf");
+    font-family: Quicksand-Light;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Medium.ttf");
+    font-family: Quicksand-Medium;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Regular.ttf");
+    font-family: Quicksand-Regular;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-SemiBold.ttf");
+    font-family: Quicksand-SemiBold;
+}
+
+* {
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.main{
+    background-color: #EEEEEE;
+    // height: 100%;
+    // padding-top: 4px;
+}
+
+.heading{
+    display: flex; 
+    margin: 0px 25px; 
+    align-items: center;
+}
+.heading-text{
+    font-family: Quicksand-SemiBold;
+    font-size: large;
+}
+.edit-text{
+    color: #1F7A54;
+    font-family: Quicksand-SemiBold;
+    font-size: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.heading-img{
+    height: 20px;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
+
+
+////////
+.inputs{
+    background-color: #FFFFFF;
+    
+    display: flex;
+    padding: 24px;
+    margin: 0px 24px 24px 24px;
+}
+
+.button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.btn{
+    background-color: #3FD28B;
+    font-family: Quicksand-SemiBold;
+    width: 100px;
+    border-radius: 4px;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.form-child{
+    flex: 1;
+}
+
+.form-input{
+    min-height: 500px;
+}
+.form-profile{
+    min-height: 500px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+}
+
+.profile-pic{
+    height: 150px;
+    margin-right: 20px;
+}
+.profile-image {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.upload-text{
+    color: #3FD28B;
+    cursor: pointer;
+    font-family: Quicksand-SemiBold;
+    margin-top: 20px;
+}
+
+.pic-msg{
+    color: #B6B6B6;
+    font-family: Quicksand-SemiBold;
+    font-size:small;
+    margin-right: 25px;
+}
+
+.form-control{
+    border: none;
+    border-bottom: 2px solid #CECECE;
+}
+.form-label{
+    color: #747474;
+    font-family: Quicksand-SemiBold;
+}
+
+.code{
+    border: none;
+    border-bottom: 2px solid #CECECE;
+}
+
+.resume{
+    display: flex;
+    align-items: center;
+    
+}
+.upload{
+    height: 35px;
+}
+.resume-text{
+    color: #000000;
+    margin-top: 10px;
+    margin-left: 2px;
+    font-family: QuickSand-SemiBold;
+    cursor: pointer;
+}
+
+.check{
+    display:flex;
+    align-items: center;
+}
+    
+.check-btn{
+    width:20px;
+    height:20px;
+    margin-right:7px;
+    accent-color: #197f54;
+    cursor: pointer;
+    
+}
+
+.remember{
+    font-family: Quicksand-SemiBold;
+    margin-top: 2px;
+}
+////////
+/// ///
+.qualification{
+    padding: 0px 24px 24px 24px;
+    // margin-bottom: 25px;
+    // background-color: #0D6EFD;
+}
+.qualification-header{
+    min-height: 56px;
+    background-color: #DBEFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left:15px;
+    padding-right: 10px;
+}
+
+.qualification-detail{
+    background-color: #FFFFFF;
+    padding: 25px;
+    
+}
+
+.first-details{
+    display: flex;
+}
+.education-title{
+    font-family: Quicksand-SemiBold;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: large;
+}
+.vertical-line {
+    border-left: 1px solid #A4B3BF;
+    height: 56px;
+    margin-left: auto;
+    margin-right: 5px;
+  }
+.expand{
+    height: 30px;
+    cursor: pointer;
+}
+
+.left-content,.right-content,.half1,.half2,.left-side,.right-side{
+    flex: 1;
+}
+.half-content{
+    display: flex;
+}
+
+.form-control{
+    border: none;
+    border-bottom: 2px solid #CECECE;
+}
+.form-label{
+    color: #747474;
+    font-family: Quicksand-SemiBold;
+}
+
+.button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn{
+    background-color: #3FD28B;
+    font-family: Quicksand-SemiBold;
+    width: 100px;
+    border-radius: 4px;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.education2{
+    display: flex;
+    gap: 20px;
+}
+
+.radio-container{
+    display:flex;
+    align-items: center;
+    gap: 15px;
+}
+.radio-btn{
+    width:20px;
+    height:20px;
+    border: 2px solid #0D6EFD;
+}
+.form-check-label{
+    font-family: Quicksand-SemiBold;
+    margin-left: 5px;
+}
+
+.check{
+    display:flex;
+    align-items: center;
+}
+    
+.check-btn{
+    width:20px;
+    height:20px;
+    margin-right:7px;
+    accent-color: #197f54;
+    cursor: pointer;
+    
+}
+
+.remember{
+    font-family: Quicksand-SemiBold;
+    margin-top: 2px;
+}
+/// 

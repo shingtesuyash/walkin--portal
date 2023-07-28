@@ -1,0 +1,53 @@
+<app-header [imgUrl]="url"></app-header>
+
+<main class="main">
+    <div class="container">
+        <form id="formSubmit" [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+                <div class="title">
+                    <p class="heading">Log in</p>
+                </div>
+    
+                <input class="cred"  type="email" placeholder="Email ID*" name="email" formControlName="email">
+                <div *ngIf="fc.email.errors?.required">
+                    <div class="alert alert-danger" *ngIf="fc.email.touched && fc.email.invalid">Email is Required... </div>  
+                </div>
+                <div *ngIf="fc.email.errors?.pattern"> 
+                    <div class="alert alert-danger" *ngIf="fc.email.touched && fc.email.invalid">Invalid Email Id... </div> 
+                </div>
+                
+                <p class="forgot">FORGOT EMAIL ID?</p>
+                
+
+                <input class="cred" id="id_password" type="password" placeholder="Password*" name="password" formControlName="password">
+                <span>
+                    <img class="eye" src="../../assets/icons/preview.svg" id="togglePassword" alt="" srcset="" (click)="togglePassword()">
+                </span>
+                <div *ngIf="fc.password.errors?.required">
+                    <div class="alert alert-danger" *ngIf="fc.password.touched && fc.password.invalid">Password is Required... </div>  
+                </div>
+                <p class="forgot">FORGOT PASSWORD?</p>
+                
+                <div class="check">
+                    <input class="check-btn" type="checkbox" id="rem" formControlName="remember">
+                    <label class="remember"for="rem">Remember Me</label>
+                </div>
+    
+                <div class="logBtn">
+                    <button class="btn logIn" type="submit" [disabled]="form.invalid">LOG IN</button>
+                </div>
+    
+                <div class="text-center">
+                    <p class="mb-0">Not registered yet?</p>
+                    <h6 class="createAcc" routerLink="./personalInfo">CREATE AN ACCOUNT</h6>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+    <div class="content-2">
+        <h4 class="extraDetail">About</h4>
+        <div class="vl"></div>
+        <h4 class="extraDetail">Contact Us</h4>
+    </div>
+</main>

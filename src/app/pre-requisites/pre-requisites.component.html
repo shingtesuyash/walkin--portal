@@ -1,0 +1,20 @@
+<div class="qualification-header">
+    <h6 class="education-title">Pre-requisites & Application Process</h6>
+    <div class="vertical-line"></div>
+    <img class="expand" (click)="toggleContent()" src="../../assets/icons/expand-less.svg" alt=""> 
+ </div>
+ <div class="content" [ngClass]="{'slide-down': showContent, 'slide-up': !showContent}">
+    <div class="inner-content">
+        <p class="label">General Instructions :</p>
+        <app-bullet-point [content]="userSelectedWalkin.generalInstruction"></app-bullet-point>
+        <hr class="custom-hr">
+        <p class="label">Instructions for the Exam :</p>
+        <app-bullet-point [content]="userSelectedWalkin.examInstruction"></app-bullet-point>
+        <hr class="custom-hr">
+        <p class="label">Minimum System Requirements :</p>
+        <app-bullet-point [content]="userSelectedWalkin.systemRequirement"></app-bullet-point>
+        <hr class="custom-hr">
+        <p class="label">Process :</p>
+        <app-bullet-point [content]="userSelectedWalkin.process"></app-bullet-point>
+    </div>
+  </div>

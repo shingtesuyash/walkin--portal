@@ -1,0 +1,20 @@
+    <div class="qualification-header">
+        <h6 class="education-title">{{role.label}}</h6>
+        <div class="vertical-line"></div>
+        <img class="expand" (click)="toggleContent()" src="../../assets/icons/expand-less.svg" alt=""> 
+     </div>
+     <div class="content" [ngClass]="{'slide-down': showContent, 'slide-up': !showContent}">
+        <div class="inner-content">
+            <p class="label">gross compensation package :</p>
+            <app-bullet-point [content]="role.package"></app-bullet-point>
+            <hr class="custom-hr">
+
+            <p class="label">Role Description :</p>
+            <app-bullet-point [content]="role.description"></app-bullet-point>
+            <hr class="custom-hr">
+
+            <p class="label">Requirements :</p>
+            <app-bullet-point [content]="role.requirements"></app-bullet-point>
+        </div>
+      </div>
+

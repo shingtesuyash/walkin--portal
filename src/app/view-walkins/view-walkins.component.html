@@ -1,0 +1,38 @@
+<div class="main">
+    <app-header [imgUrl]="url"></app-header>
+    <div class="allCards">
+        
+            <div *ngIf="walkins">
+                <div *ngFor="let walkin of walkins">
+                    <div *ngIf="walkin.expire!=''" class="expire-div">
+                        <p class="expire">Expires in {{walkin.expire}} days</p>
+                    </div>
+                    <div class="card shadow">
+                        <h5 class="walkin-title">{{ walkin.title }}</h5>
+                        <p class="label">Date & Time:</p>
+                        <div class="date-time">
+                            <p class="input-data">{{walkin.startDate}} to {{walkin.endDate}}</p>
+                            <div class="vl"></div>
+                            <div class="location">
+                                <img class="loc-img" src="../../assets/icons/location.svg" alt="">
+                                <p class="label">{{walkin.location}}</p>
+                            </div>
+                        </div>
+                        <hr class="custom-hr">
+                        <p class="label">Job Roles:</p>
+                        <div class="job-roles">
+                            <div class="job-roles" *ngFor="let role of walkin.roles; let i=index">
+                                <img class="role-img" [src]="role.imgSrc" alt="">
+                                <p class="input-data">{{role.label}}</p>
+                                <div *ngIf="i < (walkin.roles.length-1)" class="vl"></div>
+                            </div>
+                        </div>
+                        <p *ngIf="walkin.internship!=''" class="internship">Internship Opportunity for {{walkin.internship}} Students</p>
+                        <div class="apply-button">
+                            <button type="button"  class="btn text-dark shadow" (click)="navigateToDetailPage(walkin)"  >VIEW MORE DETAILS</button>
+                        </div>
+                    </div> 
+                </div>     
+            </div>
+   
+</div>

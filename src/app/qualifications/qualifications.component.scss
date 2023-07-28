@@ -1,0 +1,141 @@
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Bold.ttf");
+    font-family: Quicksand-Bold;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Light.ttf");
+    font-family: Quicksand-Light;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Medium.ttf");
+    font-family: Quicksand-Medium;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Regular.ttf");
+    font-family: Quicksand-Regular;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-SemiBold.ttf");
+    font-family: Quicksand-SemiBold;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.main{
+    background-color: #EEEEEE;
+    min-height: calc( 100vh - 101px );
+    padding-top: 4px;
+}
+
+.qualification{
+    padding: 0px 24px;
+    margin-bottom: 25px;
+}
+.qualification-header{
+    min-height: 56px;
+    background-color: #DBEFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left:15px;
+    padding-right: 10px;
+}
+
+.qualification-detail{
+    background-color: #FFFFFF;
+    padding: 25px;
+    
+}
+
+.first-details{
+    display: flex;
+}
+.education-title{
+    font-family: Quicksand-SemiBold;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: large;
+}
+.vertical-line {
+    border-left: 1px solid #A4B3BF;
+    height: 56px;
+    margin-left: auto;
+    margin-right: 5px;
+  }
+.expand{
+    height: 30px;
+    cursor: pointer;
+}
+
+.left-content,.right-content,.half1,.half2,.left-side,.right-side{
+    flex: 1;
+}
+.half-content{
+    display: flex;
+}
+
+.form-control{
+    border: none;
+    border-bottom: 2px solid #CECECE;
+}
+.form-label{
+    color: #747474;
+    font-family: Quicksand-SemiBold;
+}
+
+.button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn{
+    background-color: #3FD28B;
+    font-family: Quicksand-SemiBold;
+    width: 100px;
+    border-radius: 4px;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.education2{
+    display: flex;
+    gap: 20px;
+}
+
+.radio-container{
+    display:flex;
+    align-items: center;
+    gap: 15px;
+}
+.radio-btn{
+    width:20px;
+    height:20px;
+    border: 2px solid #0D6EFD;
+}
+.form-check-label{
+    font-family: Quicksand-SemiBold;
+    margin-left: 5px;
+}
+
+.check{
+    display:flex;
+    align-items: center;
+}
+    
+.check-btn{
+    width:20px;
+    height:20px;
+    margin-right:7px;
+    accent-color: #197f54;
+    cursor: pointer;
+    
+}
+
+.remember{
+    font-family: Quicksand-SemiBold;
+    margin-top: 2px;
+}

@@ -1,0 +1,85 @@
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Bold.ttf");
+    font-family: Quicksand-Bold;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Light.ttf");
+    font-family: Quicksand-Light;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Medium.ttf");
+    font-family: Quicksand-Medium;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Regular.ttf");
+    font-family: Quicksand-Regular;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-SemiBold.ttf");
+    font-family: Quicksand-SemiBold;
+}
+
+* {
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.main{
+    background-color: #EEEEEE;
+    min-height: 100vh;
+    padding-bottom: 25px;
+}
+.card{
+    background-color: #FFFFFF;
+    padding: 25px;
+    margin: 25px 25px 0px 25px;
+}
+
+.outer-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.green-tick{
+    z-index: 1;
+    height: 150px;
+    width: 150px;
+    position: relative;
+    top: 90px;
+    
+}
+
+.ticket-title{
+    font-family: Quicksand-SemiBold;
+    margin-top: 50px;
+}
+.custom-hr{
+    background-color: #c2c2c2;
+    height: 2px;
+    border: none;
+}
+.label{
+    font-family: Quicksand-SemiBold;
+    color: #838383;
+    font-size: smaller;
+    margin-bottom: 5px;
+}
+.input-data{
+    font-family: Quicksand-SemiBold;
+    font-size: 15px;
+    margin-bottom: 0px;
+}
+
+.button-container{
+    text-align: center;
+}
+.btn{
+    background-color: #3FD28B;
+    font-family: Quicksand-SemiBold;
+    border-radius: 4px;
+    text-align: center;
+    width: 40%;
+}

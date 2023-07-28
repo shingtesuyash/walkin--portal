@@ -1,0 +1,133 @@
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Bold.ttf");
+    font-family: Quicksand-Bold;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Light.ttf");
+    font-family: Quicksand-Light;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Medium.ttf");
+    font-family: Quicksand-Medium;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-Regular.ttf");
+    font-family: Quicksand-Regular;
+}
+@font-face {
+    src: url("../../assets/fonts/Quicksand-SemiBold.ttf");
+    font-family: Quicksand-SemiBold;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.main{
+    background-color: #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+    min-height: calc(100vh - 55px);
+}
+.container{
+    background-color: #FFFFFF;
+    max-width: 600px;
+    min-height: 500px;
+    border-radius: 3px;
+    border-top: 5px solid #3AC7EC;
+    padding: 10px 35px;
+}
+
+.title{
+    font-family: Quicksand-Bold;
+    font-size: x-large;
+    text-align: center;
+}
+
+.cred{
+    width:98%;
+    height: 35px;
+    border: transparent;
+    border-bottom: 2px solid #E0E0E0;
+    font-size:medium;
+    font-family: Quicksand-Light;
+    font-weight: bold;
+}
+
+.eye{
+    margin-left: -7%;
+    display: inline;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.forgot{
+    text-align: end;
+    color: #1F7A54;
+    font-family: Quicksand-SemiBold;
+    margin-top: 5px;
+    margin-bottom: 45px;
+    cursor: pointer;
+}
+
+.check{
+    display:flex;
+    margin-bottom:40px;
+    align-items: center;
+}
+    
+.check-btn{
+    width:20px;
+    height:20px;
+    margin-right:7px;
+    accent-color: #197f54;
+}
+
+.remember{
+    font-family: Quicksand-SemiBold;
+    margin-top: 2px;
+}
+
+.logBtn{
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 30px;   
+}
+
+.logIn{
+    width: 50%;
+    height: 45px;
+    color: black;
+    background-color: #3FD28B;
+    font-family: Quicksand-SemiBold;
+    border-radius: 3px;
+    border: none;
+    font-size:medium;
+    box-shadow: 3px 3px 12px #bebebe;
+}
+
+.createAcc{
+    font-family: Quicksand-SemiBold;
+    color: #1F7A54;
+    cursor: pointer;
+}
+
+.content-2{
+    display: flex;
+    align-items: center;
+    color: #1F7A54;
+    font-family: Quicksand-SemiBold;
+}
+
+.extraDetail{
+    cursor: pointer;
+    font-size:large;
+}
+.vl{
+    border-left: 2px solid #C5C6C6;
+    height: 18px;
+    margin: 0px 20px;
+}
+

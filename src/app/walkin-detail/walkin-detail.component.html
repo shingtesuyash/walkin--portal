@@ -1,0 +1,84 @@
+<div class="main">
+    <app-header [imgUrl]="url"></app-header>
+
+    <div *ngIf="walkinData.expire!=''" class="expire-div">
+        <p class="expire">Expires in {{walkinData.expire}} days</p>
+    </div>
+    <div class="card">
+        <div class="walkin-header">
+            <h5 class="walkin-title">{{ walkinData.title }}</h5>
+            <button type="button"  class="btn text-dark shadow" (click)="apply()" [routerLink]="'/hallTicket'" >APPLY</button>
+        </div>
+        
+        <p class="label">Date & Time:</p>
+        <div class="date-time">
+            <p class="input-data">{{walkinData.startDate}} to {{walkinData.endDate}}</p>
+            <div class="vl"></div>
+            <div class="location">
+                <img class="loc-img" src="../../assets/icons/location.svg" alt="">
+                <p class="label">{{walkinData.location}}</p>
+            </div>
+        </div>
+        <hr class="custom-hr">
+        <p class="label">Job Roles:</p>
+        <div class="job-roles">
+            <div class="job-roles" *ngFor="let role of walkinData.roles; let i=index">
+                <img class="role-img" [src]="role.imgSrc" alt="">
+                <p class="input-data">{{role.label}}</p>
+                <div *ngIf="i < (walkinData.roles.length-1)" class="vl"></div>
+            </div>
+        </div>
+        <p *ngIf="walkinData.internship!=''" class="internship">Internship Opportunity for {{walkinData.internship}} Students</p>
+    </div>
+
+    <app-pre-requisites [userSelectedWalkin]="walkinData"></app-pre-requisites>
+    
+      <div class="cardTime">
+        <h6 class="mb-4">Time Slots & Preferences</h6>
+        <form [formGroup]="userForm">
+            <div class="mb-4">
+                <label class="label">Select a Time Slot:</label>
+                <div class="radio-container">
+                    <div class="form-check">
+                        <input type="radio"  formControlName="selectedTime" value="9:00 AM to 11:00 AM" class="form-check-input radio-btn">
+                        <label class="form-check-label">9:00 AM to 11:00 AM</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" formControlName="selectedTime" value="1:00 PM to 3:00 PM" class="form-check-input radio-btn">
+                        <label class="form-check-label">1:00 PM to 3:00 PM</label>
+                    </div>
+                </div>
+            </div>
+            <hr class="custom-hr">
+            <div class="mb-4">
+                <label for="preferredRole" class="label">Select Your Preference:</label>
+                
+                <div class="check" *ngFor="let job of jobs">
+                    <input
+                      class="check-btn"
+                      type="checkbox"
+                      [id]="job.value"
+                      [value]="job.value"
+                      [formControl]="getFormControl(job.value)"
+                      (change)="onCheckboxChange(job.value, $event)"
+                    >
+                    <label class="remember" [for]="job.value">{{ job.label }}</label>
+                </div>
+                
+              </div>
+              <hr class="custom-hr">
+            <div class="resume" >
+                <input #uploadResume type="file" id="resumeInput"  accept=".pdf"  (change)="onResumeSelected($event)" hidden>
+                <img class="upload" src="../../assets/icons/upload.svg" alt="">
+                <h6 class="resume-text" (click)="uploadResume.click()">UPLOAD UPDATED RESUME</h6>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="displayRoles">
+        <div *ngFor="let role of walkinData.roles">
+            <app-show-roles [role]="role"></app-show-roles>
+        </div>
+    </div>
+</div>
